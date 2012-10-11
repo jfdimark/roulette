@@ -32,4 +32,8 @@ class Wheel
 		return @wheel.pop
 	end
 
+	def test
+		10
+	end
+
 end
