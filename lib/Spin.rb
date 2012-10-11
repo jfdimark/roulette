@@ -6,3 +6,4 @@ module SpinWheel
 	# could substitute an arbitrary shuffling algorithm here
     return wheel.shuffle!
   end
+end
