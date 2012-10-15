@@ -29,7 +29,7 @@ class Numbers
 
 		@display = case n
 			when 0 then "0"
-			when 1..36 then "#{number}, #{colour.downcase}, #{type}"
+			when 1..36 then "#{number}, color #{colour.downcase}, and it is #{type}"
 		end
 	end
 end

@@ -44,17 +44,26 @@ class Game
 		puts "And choose a number to bet on"
 		user_choice = $stdin.gets.chomp.upcase
 
+		if user_choice.to_i > 36
+			puts "Sorry, invalid number, please choose between 0 and 36"
+			return
+		end
+
+		puts "Ball landed on #{@wheel.drop_ball.display}"
+
 
 		#Can't get it to recognize drop_ball, says:
 		#"undefined method error - doesn't like .pop"
 		if (user_choice == @wheel.drop_ball)
-			@user.total += (user_stake.to_i * 30)
+			@user.total += (user_stake.to_i * 36)
+			puts "Congrats you win!"
+		elsif (user_choice.to_i == @colour) && (@wheel.drop_ball == @colour)
+			@user.total += (user_stake.to_i * 2)
 			puts "Congrats you win!"
 		else
 			@user.total -= user_stake.to_i
 			puts "Sorry, you lose"
 		end
-
 
 		if @user.total <= 0
 			@game_over = true
