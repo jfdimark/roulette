@@ -1,19 +1,14 @@
 class User
 
-	attr_accessor :name
-	attr_accessor :hand
 	attr_accessor :total
+	attr_accessor :name
+	attr_accessor :bust
 
-	def initialize(name, hand)
+
+	def initialize(name)
 		@name = name
-		@hand = Array.new
-		@total = 100
-		@bust = faulse
+		@total = 1000
+		@bust = false
 	end
 
-	
-
-
-
-
-
+end
