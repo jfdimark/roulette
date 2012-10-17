@@ -12,6 +12,7 @@ require 'lib/spin'
 class Wheel
 
 	attr_accessor :wheel
+	attr_accessor :drop_ball
 
 	include SpinWheel
 
@@ -23,13 +24,12 @@ class Wheel
 				n = i + 1
 				@wheel << Numbers.new(n)
 			end
-		
-		@wheel =  spin_wheel(@wheel)
+		spin
 	end
 
-
-	def drop_ball
-		return @wheel.pop
+	def spin
+		@wheel.shuffle!
+		@drop_ball = @wheel.first
 	end
 
 	def test
