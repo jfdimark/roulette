@@ -13,8 +13,5 @@ class User
 		@bust = false
 	end
 
-	def stake
-		stake = {c: user_choice, s: user_stake}
-	end
 
 end

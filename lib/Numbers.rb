@@ -21,11 +21,19 @@ class Numbers
 			@type = "odds"
 		end
 
+		@position = case @number
+			when (1..18) then "1-18"
+			when (19..36) then "19-36"
+			else ""
+		end
+
+=begin
 		@position = case n
 			when 0 then "off_of_table"
 			when 1..18 then "bottom_of_table"
 			when 19..36 then "top_of_table"
 		end
+=end
 
 		@display = case n
 			when 0 then "0"
