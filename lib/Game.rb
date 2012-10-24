@@ -38,7 +38,7 @@ def spin_wheel
 
 
 	loop do 
-			puts "Place your stake from 0-1000"
+		puts "Place your stake from 0-1000"
 		user_stake = $stdin.gets.chomp.upcase
 
 
@@ -65,14 +65,24 @@ def spin_wheel
 			return	
 		end
 
-		bets << single_bet
+			bets << single_bet
 
-		puts "Another bet??? (Y/N)"
-		again = $stdin.gets.chomp.upcase
+			case do
+				puts "Another bet??? (Y/N)"
+				again = $stdin.gets.chomp.upcase
 
-		if again == "N"
-			break
-		end
+				if again == "Y"
+				bets
+				elsif again == "N"
+				break
+				else again
+				puts 'invalid entry, please choose Y or N'
+				return
+				end
+			end
+
+
+		
 	end
 
 	puts bets
